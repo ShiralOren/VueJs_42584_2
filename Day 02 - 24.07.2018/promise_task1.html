@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+        function f() {
+            let x = Math.floor((Math.random() * (249)));
+            console.log(x);
+            fetch("https://restcountries.eu/rest/v2/all?fields=name")
+                .then(res1 => { return res1.json(); })
+                .then(res2 => {
+                    fetch(`https://restcountries.eu/rest/v2/name/${res2[x].name}`)
+                    .then(res4=>{return res4.json()})
+                        .then(res3 => { document.getElementById("test").innerHTML = JSON.stringify(res3)})
+                })
+               }
+    </script>
+</head>
+
+<body>
+    <button onclick="f()">click me</button>
+    <p id="test"></p>
+    <style>
+    
+    p{
+        font-size:1em;
+        font-weight: 600;
+        color:blueviolet;
+    } 
+
+    </style>
+
+</body>
+
+</html>
