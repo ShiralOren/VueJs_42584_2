@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <form id="app">
+        <label>date and time</label>
+        <input type="datetime-local" id="date_time">
+        <br>
+        <br>
+        <label>content</label>
+        <input type="text" id="content">
+        <br>
+        <br>
+        <button v-on:click="save_task"> {{save}} </button>
+        <br>
+        <a :href="link">{{ back }}</a> 
+        
+
+    </form>
+
+
+
+    <script>
+        new Vue(
+            {
+                el: '#app',
+                data: {
+                    save: 'save task',
+                    back: 'go back',
+                    link:'00_project.html'
+                },
+                methods:
+                {
+                    save_task: function () {
+                        let task = {
+                            dt: document.getElementById("date_time").value,
+                            con: document.getElementById("content").value
+                        };
+
+                        sessionStorage.setItem("task", JSON.stringify(task));
+
+                            let prevtask = localStorage.getItem("alltask");
+                            prevtask = (prevtask) ? JSON.parse(prevtask) : [];
+                        prevtask.push(task);
+                        localStorage.setItem("alltask", JSON.stringify(prevtask));
+                    }
+                }
+
+            }
+        );
+
+    </script>
+</body>
+
+</html>

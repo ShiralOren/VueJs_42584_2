@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+         <a :href="list">{{ btn1 }}</a> <br>
+         <a :href="add">{{ btn2 }}</a> 
+         <a :href="link">{{ back }}</a> 
+    </div>
+
+    <script>
+        new Vue(
+            {
+                el: '#app',
+                data: {
+                    btn1: 'task-list',
+                    btn2: 'add',
+                    list:'02_task-list.html',
+                    add:'01_add-list.html',
+                    link:'00_project.html'
+                    back:
+                }
+            });
+
+
+    </script>
+
+</body>
+
+</html>
