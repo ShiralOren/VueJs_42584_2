@@ -41,8 +41,7 @@
                             con: document.getElementById("content").value
                         };
 
-                        sessionStorage.setItem("task", JSON.stringify(task));
-
+                        
                             let prevtask = localStorage.getItem("alltask");
                             prevtask = (prevtask) ? JSON.parse(prevtask) : [];
                         prevtask.push(task);
