@@ -3,6 +3,7 @@
 
 <head>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 
 <body>
@@ -16,9 +17,8 @@
         <br>
         <br>
         <button v-on:click="save_task"> {{save}} </button>
-        <br>
+        <br> <br>
         <a :href="link">{{ back }}</a> 
-        
 
     </form>
 
@@ -30,7 +30,7 @@
                 el: '#app',
                 data: {
                     save: 'save task',
-                    back: 'go back',
+                    back: 'home page',
                     link:'00_project.html'
                 },
                 methods:
@@ -47,6 +47,7 @@
                             prevtask = (prevtask) ? JSON.parse(prevtask) : [];
                         prevtask.push(task);
                         localStorage.setItem("alltask", JSON.stringify(prevtask));
+                        
                     }
                 }
 

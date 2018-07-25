@@ -3,6 +3,7 @@
 
 <head>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +13,8 @@
 
 <body>
     <div id="app">
-         <a :href="list">{{ btn1 }}</a> <br>
+         <a :href="list">{{ btn1 }}</a> <br> <br>
          <a :href="add">{{ btn2 }}</a> 
-         <a :href="link">{{ back }}</a> 
     </div>
 
     <script>
@@ -26,8 +26,8 @@
                     btn2: 'add',
                     list:'02_task-list.html',
                     add:'01_add-list.html',
-                    link:'00_project.html'
-                    back:
+                    link:'00_project.html',
+                   
                 }
             });
 
